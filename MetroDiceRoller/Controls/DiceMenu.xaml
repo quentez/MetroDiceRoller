@@ -10,7 +10,7 @@
     d:DesignWidth="400">
     
     <Grid Background="{x:Null}">
-    	<ItemsControl Margin="0" ItemsSource="{Binding}">
+        <ItemsControl Margin="0" ItemsSource="{Binding Main.Counters, Source={StaticResource Locator}}">
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <local:DiceCounter DataContext="{Binding}" Height="60"/>                    

@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using MetroDiceRoller.ViewModel;
+
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
 namespace MetroDiceRoller
@@ -23,6 +25,12 @@ namespace MetroDiceRoller
     /// </summary>
     sealed partial class App : Application
     {
+        static App()
+        {
+            // Create the App ViewModel.
+            ViewModel = new MainViewModel();
+        }
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -32,6 +40,8 @@ namespace MetroDiceRoller
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
+
+        public static MainViewModel ViewModel { get; set; }
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points

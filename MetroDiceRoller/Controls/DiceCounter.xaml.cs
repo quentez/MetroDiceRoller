@@ -12,6 +12,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using MetroDiceRoller.ViewModel;
+
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
 namespace MetroDiceRoller
@@ -23,9 +25,34 @@ namespace MetroDiceRoller
             this.InitializeComponent();
         }
 
+        #region Logic method
+
+        private void DiceCountUpdate(int offset)
+        {
+            // Retrieve the ViewModel for this DiceCounter.
+            var diceCounterViewModel = this.DataContext as DiceCounterViewModel;
+            if (diceCounterViewModel == null)
+            {
+                return;
+            }
+
+            diceCounterViewModel.DiceCount += offset;
+        }
+
+        #endregion
+
+        #region Event handlers
+
         private void TapGridPlus_Released(object sender, PointerRoutedEventArgs e)
         {
-
+            DiceCountUpdate(1);
         }
+
+        private void TapGridLess_Released(object sender, PointerRoutedEventArgs e)
+        {
+            DiceCountUpdate(-1);
+        }
+
+        #endregion
     }
 }

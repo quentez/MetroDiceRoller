@@ -5,6 +5,7 @@
     xmlns:local="using:MetroDiceRoller"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:MetroDiceRoller.Controls"
     mc:Ignorable="d"
     d:DesignHeight="300"
     d:DesignWidth="400">
@@ -16,7 +17,12 @@
     	</Grid.ColumnDefinitions>
     	<TextBlock HorizontalAlignment="Left" Margin="10,3,10,0" TextWrapping="Wrap" Text="{Binding CounterName}" VerticalAlignment="Center" FontFamily="Segoe WP Semibold" FontSize="26.667"/>
     	<TextBlock HorizontalAlignment="Center" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" FontFamily="Segoe WP Semibold" FontSize="26.667" Grid.Column="1" Text="0"/>
-    	<Grid Grid.Column="1" HorizontalAlignment="Left" Height="60" Margin="0" VerticalAlignment="Center" Width="60" Background="#0FFFFFFF"/>
-    	<Grid Grid.Column="1" HorizontalAlignment="Right" Height="60" Margin="0" VerticalAlignment="Center" Width="60" Background="#0FFFFFFF"/>
+        <controls:TapGrid Grid.Column="1" HorizontalAlignment="Left" Height="60" Margin="0" VerticalAlignment="Center" Width="60" Background="#0FFFFFFF" PointerReleased="TapGridPlus_Released">
+    		<Rectangle Fill="White" HorizontalAlignment="Center" Height="28" Margin="0" VerticalAlignment="Center" Width="4"/>
+    		<Rectangle Fill="White" HorizontalAlignment="Center" Height="4" Margin="0" VerticalAlignment="Center" Width="28"/>
+        </controls:TapGrid>
+        <controls:TapGrid Grid.Column="1" HorizontalAlignment="Right" Height="60" Margin="0" VerticalAlignment="Center" Width="60" Background="#0FFFFFFF">
+    		<Rectangle Fill="White" HorizontalAlignment="Center" Height="4" Margin="0" VerticalAlignment="Center" Width="28"/>
+        </controls:TapGrid>
     </Grid>
 </UserControl>

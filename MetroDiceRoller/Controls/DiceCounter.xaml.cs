@@ -22,5 +22,10 @@ namespace MetroDiceRoller
         {
             this.InitializeComponent();
         }
+
+        private void TapGridPlus_Released(object sender, PointerRoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -14,15 +14,24 @@ namespace MetroDiceRoller.Controls
     {
         public TapGrid()
         {
+            // Hide the control.
+            this.Opacity = 0;
+
             // Down animation storyboard.
-            var downAnim = new PointerDownThemeAnimation();
+            var downAnim = new FadeInThemeAnimation
+            {
+                SpeedRatio = 5
+            };
             Storyboard.SetTarget(downAnim, this);
 
             downStory = new Storyboard();
             downStory.Children.Add(downAnim);
 
             // Up animation storyboard.
-            var upAnim = new PointerUpThemeAnimation();
+            var upAnim = new FadeOutThemeAnimation
+            {
+                SpeedRatio = 0.5
+            };
             Storyboard.SetTarget(upAnim, this);
 
             upStory = new Storyboard();
@@ -31,6 +40,7 @@ namespace MetroDiceRoller.Controls
             // Set event handlers.
             this.PointerPressed += (sender, e) =>
             {
+                this.Opacity = 1;
                 this.CapturePointer(e.Pointer);
                 downStory.Begin();
             };

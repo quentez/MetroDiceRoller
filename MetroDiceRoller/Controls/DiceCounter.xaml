@@ -18,12 +18,19 @@
     	</Grid.ColumnDefinitions>
     	<TextBlock HorizontalAlignment="Left" Margin="10,3,10,0" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Center" FontSize="26.667"/>
     	<TextBlock HorizontalAlignment="Center" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="26.667" Grid.Column="1" Text="{Binding DiceCount}"/>
-        <controls:TapGrid Grid.Column="1" HorizontalAlignment="Left" Height="60" Margin="0" VerticalAlignment="Center" Width="60" Background="#0FFFFFFF" PointerReleased="TapGridPlus_Released">
-    		<Rectangle Fill="White" HorizontalAlignment="Center" Height="28" Margin="0" VerticalAlignment="Center" Width="4"/>
-    		<Rectangle Fill="White" HorizontalAlignment="Center" Height="4" Margin="0" VerticalAlignment="Center" Width="28"/>
-        </controls:TapGrid>
-        <controls:TapGrid Grid.Column="1" HorizontalAlignment="Right" Height="60" Margin="0" VerticalAlignment="Center" Width="60" Background="#0FFFFFFF" PointerReleased="TapGridLess_Released">
-    		<Rectangle Fill="White" HorizontalAlignment="Center" Height="4" Margin="0" VerticalAlignment="Center" Width="28"/>
-        </controls:TapGrid>
+    	<Grid Grid.Column="1" Width="60" Height="60" VerticalAlignment="Center" HorizontalAlignment="Left" Background="#0FFFFFFF">
+    		<Rectangle Fill="White" HorizontalAlignment="Center" Height="28" VerticalAlignment="Center" Width="4"/>
+    		<Rectangle Fill="White" HorizontalAlignment="Center" Height="4" VerticalAlignment="Center" Width="28"/>
+    		<controls:TapGrid Margin="0" Background="White" PointerReleased="TapGridPlus_Released">
+    			<Rectangle Fill="Black" HorizontalAlignment="Center" Height="28" Margin="0" VerticalAlignment="Center" Width="4"/>
+    			<Rectangle Fill="Black" HorizontalAlignment="Center" Height="4" Margin="0" VerticalAlignment="Center" Width="28"/>
+    		</controls:TapGrid>
+    	</Grid>
+    	<Grid Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Width="60" Height="60" Background="#0FFFFFFF">
+    		<Rectangle Fill="White" HorizontalAlignment="Center" Height="4" VerticalAlignment="Center" Width="28"/>
+    		<controls:TapGrid Margin="0" Background="White" PointerReleased="TapGridLess_Released">
+    			<Rectangle Fill="Black" HorizontalAlignment="Center" Height="4" Margin="0" VerticalAlignment="Center" Width="28"/>
+    		</controls:TapGrid>
+    	</Grid>
     </Grid>
 </UserControl>

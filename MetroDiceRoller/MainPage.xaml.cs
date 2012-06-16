@@ -71,6 +71,45 @@ namespace MetroDiceRoller
 
             // Orientation Change event.
             DisplayProperties.OrientationChanged += DisplayProperties_OrientationChanged;
+
+            // Starting animation.
+            GridMenu.Opacity = 0;
+            this.Loaded += (sender, e) =>
+            {
+                var menuEntranceAnim = new RepositionThemeAnimation
+                {
+                    SpeedRatio = 0.2
+                };
+
+                if (DisplayProperties.CurrentOrientation == DisplayOrientations.Portrait
+                    || DisplayProperties.CurrentOrientation == DisplayOrientations.PortraitFlipped)
+                {
+                    menuEntranceAnim.FromHorizontalOffset = (this.ActualWidth / 2.0) + (GridMenu.ActualWidth / 2.0);
+                }
+                else
+                {
+                    menuEntranceAnim.FromVerticalOffset = (this.ActualHeight / 2.0) + (GridMenu.ActualHeight / 2.0);
+                }
+
+                Storyboard.SetTarget(menuEntranceAnim, GridMenu);
+
+                var menuOpacityAnim = new DoubleAnimation
+                {
+                    To = 1,
+                    Duration = new Duration(TimeSpan.FromSeconds(0.2))
+                };
+
+                Storyboard.SetTarget(menuOpacityAnim, GridMenu);
+                Storyboard.SetTargetProperty(menuOpacityAnim, "Opacity");
+
+                var menuEntranceStory = new Storyboard();
+
+                menuEntranceStory.Children.Add(menuEntranceAnim);
+                menuEntranceStory.Children.Add(menuOpacityAnim);
+
+                menuEntranceStory.BeginTime = TimeSpan.FromSeconds(0.5);
+                menuEntranceStory.Begin();
+            };
         }
         
         /// <summary>

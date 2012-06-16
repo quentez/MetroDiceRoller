@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="e3397033-dfe2-49f4-9546-47421947a3fc" Publisher="CN=Quentin" Version="1.0.0.0" />
+  <Identity Name="e3397033-dfe2-49f4-9546-47421947a3fc" Publisher="CN=Quentin" Version="0.5.0.0" />
   <Properties>
-    <DisplayName>MetroDiceRoller</DisplayName>
+    <DisplayName>Metro Dice Roller</DisplayName>
     <PublisherDisplayName>Quentez Corporation</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -15,8 +15,8 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="MetroDiceRoller.App">
-      <VisualElements DisplayName="Metro Dice Roller" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="MetroDiceRoller" ForegroundText="light" BackgroundColor="#464646">
-        <DefaultTile ShowName="allLogos" />
+      <VisualElements DisplayName="Dice Roller" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="An App for role-playing gamemasters to roll dice faster." ForegroundText="light" BackgroundColor="#1D1D1D">
+        <DefaultTile ShowName="noLogos" />
         <SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#1D1D1D" />
         <InitialRotationPreference>
           <Rotation Preference="portrait" />

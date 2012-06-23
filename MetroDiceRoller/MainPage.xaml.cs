@@ -37,7 +37,7 @@ namespace MetroDiceRoller
             this.Loaded += new RoutedEventHandler(Page_Loaded);
             DisplayProperties.OrientationChanged += DisplayProperties_OrientationChanged;
 
-            // Original values animation.
+            // Original values for animation.
             GridMenu.Opacity = 0;
         }
         
@@ -52,135 +52,6 @@ namespace MetroDiceRoller
         }
 
         #region Event handlers
-
-        //private void BTReset_Click(object sender, RoutedEventArgs e)
-        //{
-        //    // Reset the count of every DiceCounterViewModel in the menu.
-        //    foreach (var counter in App.ViewModel.Counters)
-        //    {
-        //        counter.DiceCount = 0;
-        //    }
-        //}
-
-        //private void BTRoll_Click(object sender, RoutedEventArgs e)
-        //{
-        //    var rdm = new Random();
-
-        //    var storyFadeOldDice = new Storyboard();
-        //    var storyRollDice = new Storyboard();
-
-        //    var otherDiceRects = new List<Rect>();
-        //    var maxWidth = CanvasDice.ActualWidth;
-        //    var maxHeight = CanvasDice.ActualHeight;
-            
-        //    // Retrieve the center position of the menu, to use as a start point for the animation later.
-        //    var menuCenter = (GridMenu.VerticalAlignment == VerticalAlignment.Center) 
-        //                        ? new Point(GridMenu.ActualWidth / 2.0, maxHeight / 2.0)
-        //                        : new Point(maxWidth / 2.0, maxHeight - (GridMenu.ActualHeight / 2.0));
-
-        //    // Prepare to remove old controls.
-        //    var oldDiceList = new List<UIElement>();
-        //    foreach (UIElement oldDice in CanvasDice.Children)
-        //    {
-        //        var fadeOutAnim = new FadeOutThemeAnimation
-        //        {
-        //            SpeedRatio = 0.5
-        //        };
-
-        //        Storyboard.SetTarget(fadeOutAnim, oldDice);
-        //        storyFadeOldDice.Children.Add(fadeOutAnim);
-
-        //        oldDiceList.Add(oldDice);
-        //    }
-
-        //    // Event to remove the old dice after animation.
-        //    storyFadeOldDice.Completed += (sender2, e2) =>
-        //    {
-        //        foreach (var oldDice in oldDiceList)
-        //        {
-        //            CanvasDice.Children.Remove(oldDice);
-        //        }
-        //    };
-
-        //    // Create the new controls.
-        //    foreach (var counter in App.ViewModel.Counters)
-        //    {
-        //        for (int index = 0; index < counter.DiceCount; index++)
-        //        {
-        //            // Create the Dice object.
-        //            var dice = new Dice
-        //            {
-        //                DataContext = new DiceViewModel
-        //                {
-        //                    Number = rdm.Next(1, counter.DiceMax + 1),
-        //                    SizeRatio = (counter.DiceMax + 10) / 20.0,
-        //                    Brush = counter.Brush
-        //                }
-        //            };
-
-        //            // Add it to the Canvas.
-        //            CanvasDice.Children.Add(dice);
-
-        //            // Find a position to place the dice in max 10 loops.
-        //            Rect posRect;
-        //            bool posOk = false;
-        //            short tryCount = 0;
-
-        //            while (!posOk && tryCount < 10)
-        //            {
-        //                double newTop;
-        //                double newLeft;
-
-        //                if (GridMenu.VerticalAlignment == VerticalAlignment.Center)
-        //                {
-        //                    newTop = (double)rdm.Next(0, (int)(maxHeight - dice.RealHeight));
-        //                    newLeft = ((newTop > (maxHeight / 2.0) ? newTop - (maxHeight / 2.0) : (maxHeight / 2.0) - newTop - dice.RealHeight) > (GridMenu.ActualHeight / 2.0)) ? (double)rdm.Next(0, (int)(maxWidth - dice.RealWidth)) : (double)rdm.Next((int)GridMenu.ActualWidth, (int)(maxWidth - dice.RealWidth));
-        //                }
-        //                else
-        //                {
-        //                    newLeft = (double)rdm.Next(0, (int)(maxWidth - dice.RealWidth));
-        //                    newTop = ((newLeft > (maxWidth / 2.0) ? newLeft - (maxWidth / 2.0) : (maxWidth / 2.0) - newLeft - dice.RealWidth) > (GridMenu.ActualWidth / 2.0)) ? (double)rdm.Next(0, (int)(maxHeight - dice.RealHeight)) : (double)rdm.Next(0, (int)(maxHeight - dice.RealHeight - GridMenu.ActualHeight));
-        //                }
-
-        //                posRect = new Rect(newLeft, newTop, dice.RealWidth, dice.RealHeight);
-        //                posOk = true;
-
-        //                foreach (var otherDiceRect in otherDiceRects)
-        //                {
-        //                    var intersection = otherDiceRect;
-        //                    intersection.Intersect(posRect);
-
-        //                    if (!intersection.IsEmpty)
-        //                    {
-        //                        posOk = false;
-        //                        tryCount++;
-        //                        continue;
-        //                    }
-        //                }
-        //            }
-
-        //            // Add the current dice's rect to the list.
-        //            otherDiceRects.Add(posRect);
-
-        //            Canvas.SetLeft(dice, posRect.X);
-        //            Canvas.SetTop(dice, posRect.Y);
-
-        //            var repositionAnim = new RepositionThemeAnimation
-        //            {
-        //                FromHorizontalOffset = (menuCenter.X - (dice.RealWidth / 2.0)) - posRect.X,
-        //                FromVerticalOffset = (menuCenter.Y - (dice.RealHeight / 2.0)) - posRect.Y,
-        //                SpeedRatio = 0.2
-        //            };
-
-        //            Storyboard.SetTarget(repositionAnim, dice);
-        //            storyRollDice.Children.Add(repositionAnim);
-        //        }
-        //    }
-
-        //    // Start roll animation.
-        //    storyFadeOldDice.Begin();
-        //    storyRollDice.Begin();
-        //}
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {

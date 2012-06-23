@@ -21,14 +21,14 @@
     	<Grid Grid.Column="1" Width="60" Height="60" VerticalAlignment="Center" HorizontalAlignment="Left" Background="#0FFFFFFF">
     		<Rectangle Fill="White" HorizontalAlignment="Center" Height="28" VerticalAlignment="Center" Width="4"/>
     		<Rectangle Fill="White" HorizontalAlignment="Center" Height="4" VerticalAlignment="Center" Width="28"/>
-    		<controls:TapGrid Margin="0" Background="White" PointerReleased="TapGridPlus_Released">
+    		<controls:TapGrid Margin="0" Background="White" Command="{Binding Increment}">
     			<Rectangle Fill="Black" HorizontalAlignment="Center" Height="28" Margin="0" VerticalAlignment="Center" Width="4"/>
     			<Rectangle Fill="Black" HorizontalAlignment="Center" Height="4" Margin="0" VerticalAlignment="Center" Width="28"/>
     		</controls:TapGrid>
     	</Grid>
     	<Grid Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Width="60" Height="60" Background="#0FFFFFFF">
     		<Rectangle Fill="White" HorizontalAlignment="Center" Height="4" VerticalAlignment="Center" Width="28"/>
-    		<controls:TapGrid Margin="0" Background="White" PointerReleased="TapGridLess_Released">
+    		<controls:TapGrid Margin="0" Background="White" Command="{Binding Decrement}">
     			<Rectangle Fill="Black" HorizontalAlignment="Center" Height="4" Margin="0" VerticalAlignment="Center" Width="28"/>
     		</controls:TapGrid>
     	</Grid>

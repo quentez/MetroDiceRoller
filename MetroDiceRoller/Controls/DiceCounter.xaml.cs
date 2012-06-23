@@ -24,35 +24,5 @@ namespace MetroDiceRoller
         {
             this.InitializeComponent();
         }
-
-        #region Logic method
-
-        private void DiceCountUpdate(int offset)
-        {
-            // Retrieve the ViewModel for this DiceCounter.
-            var diceCounterViewModel = this.DataContext as DiceCounterViewModel;
-            if (diceCounterViewModel == null)
-            {
-                return;
-            }
-
-            diceCounterViewModel.DiceCount += offset;
-        }
-
-        #endregion
-
-        #region Event handlers
-
-        private void TapGridPlus_Released(object sender, PointerRoutedEventArgs e)
-        {
-            DiceCountUpdate(1);
-        }
-
-        private void TapGridLess_Released(object sender, PointerRoutedEventArgs e)
-        {
-            DiceCountUpdate(-1);
-        }
-
-        #endregion
     }
 }

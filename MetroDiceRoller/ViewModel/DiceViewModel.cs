@@ -10,6 +10,8 @@ namespace MetroDiceRoller.ViewModel
 {
     public class DiceViewModel : ViewModelBase
     {
+        #region Attached properties
+
         public const string NumberPropertyName = "Number";
 
         private int _number = 0;
@@ -81,5 +83,7 @@ namespace MetroDiceRoller.ViewModel
                 RaisePropertyChanged(SizeRatioPropertyName);
             }
         }
+
+        #endregion
     }
 }

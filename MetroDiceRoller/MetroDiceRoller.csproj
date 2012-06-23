@@ -107,6 +107,9 @@
     <Compile Include="Controls\Dice.xaml.cs">
       <DependentUpon>Dice.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\DiceCanvas.xaml.cs">
+      <DependentUpon>DiceCanvas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\DiceCounter.xaml.cs">
       <DependentUpon>DiceCounter.xaml</DependentUpon>
     </Compile>
@@ -115,6 +118,7 @@
     </Compile>
     <Compile Include="Controls\TapGrid.cs" />
     <Compile Include="Helpers\ColorHelpers.cs" />
+    <Compile Include="Helpers\RandomHelpers.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -147,6 +151,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\Dice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\DiceCanvas.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

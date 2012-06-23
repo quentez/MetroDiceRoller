@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
@@ -43,6 +44,11 @@ namespace MetroDiceRoller.Controls
                 this.Opacity = 1;
                 this.CapturePointer(e.Pointer);
                 downStory.Begin();
+
+                if (this.Command.CanExecute(null))
+                {
+                    this.Command.Execute(null);
+                }
             };
 
             this.PointerReleased += (sender, e) =>
@@ -54,5 +60,14 @@ namespace MetroDiceRoller.Controls
 
         private Storyboard downStory;
         private Storyboard upStory;
+        
+        public ICommand Command
+        {
+            get { return (ICommand)GetValue(CommandProperty); }
+            set { SetValue(CommandProperty, value); }
+        }
+
+        public static readonly DependencyProperty CommandProperty =
+            DependencyProperty.Register("Command", typeof(ICommand), typeof(TapGrid), new PropertyMetadata(null)); 
     }
 }

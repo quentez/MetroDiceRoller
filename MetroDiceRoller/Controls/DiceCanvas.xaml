@@ -1,5 +1,5 @@
 ﻿<UserControl
-    x:Class="MetroDiceRoller.DiceMenu"
+    x:Class="MetroDiceRoller.DiceCanvas"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MetroDiceRoller"
@@ -9,13 +9,5 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
     
-    <Grid Background="{x:Null}">
-        <ItemsControl Margin="0" ItemsSource="{Binding Counters}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <local:DiceCounter DataContext="{Binding}" Height="60"/>                    
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-		</ItemsControl>
-    </Grid>
+    <Canvas x:Name="MainCanvas"/>
 </UserControl>

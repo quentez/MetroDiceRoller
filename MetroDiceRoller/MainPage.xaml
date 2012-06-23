@@ -8,8 +8,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-    	<Canvas x:Name="CanvasDice" Margin="0"/>
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}" DataContext="{Binding Main, Source={StaticResource Locator}}">
+        <local:DiceCanvas Margin="0" DiceCounters="{Binding Counters}" Menu="{Binding ElementName=GridMenu}"/>
     	<Grid x:Name="GridMenu" Margin="0" Width="360" HorizontalAlignment="Left" VerticalAlignment="Center" Background="#FF3C3C3C">
     		<Grid.RowDefinitions>
     			<RowDefinition/>
@@ -19,9 +19,9 @@
     			<ColumnDefinition/>
     			<ColumnDefinition/>
     		</Grid.ColumnDefinitions>
-    		<local:DiceMenu x:Name="MainDiceMenu" Margin="0" VerticalAlignment="Top" Grid.ColumnSpan="2" Padding="0"/>
-    		<Button Content="Reset" HorizontalAlignment="Stretch" Margin="20" VerticalAlignment="Top" Grid.Row="1" FontSize="20" Click="BTReset_Click"/>
-    		<Button Content="Roll" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" FontSize="20" Margin="20" Click="BTRoll_Click"/>
+    		<local:DiceMenu x:Name="MainDiceMenu" Margin="0" VerticalAlignment="Top" Grid.ColumnSpan="2" Padding="0" />
+    		<Button Content="Reset" HorizontalAlignment="Stretch" Margin="20" VerticalAlignment="Top" Grid.Row="1" FontSize="20" Command="{Binding Reset}" />
+    		<Button Content="Roll" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" FontSize="20" Margin="20" Command="{Binding ReRoll}" />
     	</Grid>
     </Grid>
 </Page>
